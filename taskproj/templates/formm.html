@@ -1,0 +1,54 @@
+{% load static %}
+
+
+
+<!--<body style="background-image:url({% static 'new.jpg' %})">-->
+<body style="background-color:pink;">
+<form action="accept" method="post">
+    {% csrf_token %}
+  <input type="text" name="Name" placeholder="Enter Your Name"><br>
+  <input type="date" name="dob" placeholder="Enter Your DOB"><br>
+  <input type="number" name="age" placeholder="Confirm Your Age"><br>
+  Gender<input type="radio" name="male">Male<input type="radio" name="male">Female<br>
+  <input type="number" name="phone" placeholder="Enter your number"><br>
+  <input type="email" name="phone" placeholder="Enter your email"><br>
+  District<select id="dist" name="dist" >
+  <option value="t">Thiruvanthapuram</option>
+  <option value="m">Malappuram</option>
+  <option value="k">Kannur</option>
+  <option value="c">Calicut</option>
+</select><br>
+ Branch <select id="bran" name="bran">
+
+
+  <optgroup label="Malappuram">
+    <option>Alathiyour</option>
+    <option>Tirur</option>
+  </optgroup>
+  <optgroup label="Calicut">
+    <option>mavoor</option>
+    <option>kuttikattor</option>
+  </optgroup>
+    <optgroup label="Ernakulam">
+        <option>Aluva</option>
+        <option>Edapally</option>
+    </optgroup>
+</select><br>
+    
+    Material provide:<br>
+    <input type="checkbox" name="debit">Debit card<br>
+    <input type="checkbox" name="credit">Credit card<br>
+    <input type="checkbox" name="cheque">Cheque book<br>
+
+<br>
+<!--<a class="btn btn-primary" href="accept" role="button">submit</a>-->
+<a href="accept"><button>submit</button></a>
+<a href="logout">Logout</a>
+
+<!--    <a href="logout"><button>Logout</button></a>-->
+</form>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}<br>
+<a href="home" >HOME</a>
+
